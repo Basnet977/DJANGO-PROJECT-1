@@ -1,6 +1,7 @@
 from distutils.command import upload
 from tkinter import TRUE
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -14,8 +15,8 @@ class Blog(models.Model):
     cat_id = models.ForeignKey(Category,on_delete=models.PROTECT)
     title = models.CharField(max_length=255,unique=True)
     slug = models.SlugField(max_length=255,unique=True)
-    image = models.ImageField(upload_to = 'news',blank=True,null=True)
-    description = models.TextField()
+    image = models.ImageField(upload_to = 'Blog',blank=True,null=True)
+    description = RichTextField()
 
 
 

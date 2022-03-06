@@ -13,6 +13,6 @@ class AdminCategory(admin.ModelAdmin):
 @admin.register(Blog)
 class AdminBlog(admin.ModelAdmin):
     prepopulated_fields = {'slug':('title',)}
-    list_display = ['title','slug','description','image']
+    list_display = ['title','slug','description','cat_id']
     search_fields = ('title','cat_id')
 
